@@ -1,21 +1,22 @@
 PImage imgEstatica;
-PImage sup;
-int altoSup = 100;
-int anchoSup = 100;
 int posX;
 Personaje donkey;
+Banana b1;
+Banana b2;
+Banana b3;
 void setup (){
-   
-  
   size (1000,800);
 
   imgEstatica = loadImage ("donkeykong.png"); // imagen LETRAS estatica
-  sup = loadImage ("terreno.png");
+  
   donkey = new Personaje ();
-  donkey.setPosicion(new PVector(width - anchoSup,height-200));
+  donkey.setPosicion(new PVector(width - 100,height-200));
   donkey.setMovimiento(new PVector(30,10));
   
-  
+  b1 = new Banana(new PVector(width/2,100),new PVector(1,5));
+  b2 = new Banana(new PVector(200,100),new PVector(1,7));
+  b3= new Banana(new PVector(width-200,100),new PVector(1,9));
+
   
 }
 
@@ -23,7 +24,6 @@ void setup (){
 void draw (){
   background (0);
   imageMode (CENTER);
- 
   image (imgEstatica, width/2,height/3,600,400); // parametros de la imagen estatica
 
   
@@ -34,11 +34,17 @@ void draw (){
    rect (posX, posY,30,30);
  }
  }
-  
-  
   actualizarMovimiento();
   donkey.dibujar(); // dibuja al personaje
-
+  b1.dibujar();
+  b1.movimiento();
+   b1.verificarColision();
+  b2.dibujar();
+  b2.movimiento();
+   b2.verificarColision();
+  b3.dibujar()  ;
+  b3.movimiento();
+  b3.verificarColision();
   
 }
 
