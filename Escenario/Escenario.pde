@@ -1,10 +1,10 @@
 PImage imgEstatica;
 int posX;
-Personaje donkey;
-Banana b1;
-Banana b2;
-Banana b3;
-void setup (){
+private Personaje donkey;
+private Banana b1;
+private Banana b2;
+private Banana b3;
+public void setup (){
   size (1000,800);
 
   imgEstatica = loadImage ("donkeykong.png"); // imagen LETRAS estatica
@@ -21,7 +21,7 @@ void setup (){
 }
 
 
-void draw (){
+public void draw (){
   background (0);
   imageMode (CENTER);
   image (imgEstatica, width/2,height/3,600,400); // parametros de la imagen estatica
@@ -34,10 +34,10 @@ void draw (){
    rect (posX, posY,30,30);
  }
  }
-  actualizarMovimiento();
+  actualizarMovimiento(); //movimiento del personaje
   donkey.dibujar(); // dibuja al personaje
-  b1.dibujar();
-  b1.movimiento();
+  b1.dibujar();                   //movimiento y dibujos de las 3 bananas
+  b1.movimiento();                //verificador de las bananas que logra que reboten
    b1.verificarColision();
   b2.dibujar();
   b2.movimiento();

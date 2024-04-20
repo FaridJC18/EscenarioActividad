@@ -1,7 +1,7 @@
 class Personaje {
-  PVector posicion ;
-  PVector movimiento;
-  PImage donkey;
+  private PVector posicion ;
+  private PVector movimiento;
+  private PImage donkey;
   
   public Personaje (){
    donkey= loadImage ("personaje.png");
